@@ -1,36 +1,30 @@
-<html ng-app='seuss'>
+<html ng-app='disFilms'>
+
 <head>
     <meta charset="UTF-8">
-    <title>Rate My Things</title>
+    <title>Hello Disney List</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
+
 <body ng-controller="MainController" class="container">
-    <h1> March 2<sup>nd</sup> is Dr. Seuss' Birthday'</h1>
-   {{2+2}} 
-   <form ng-submit="makeBook()">
-       <div class="form-group">
-           <label>Book Title: </label>
-           <input type="text" ng-model="newBook.title" class="form-control" placeholder="Title">
-       </div>
-       <div class="form-group">
-           <label>Book Rating: </label>
-           <input type="range" max="5" min="0" ng-model="newBook.rating" class="form-control" placeholder="Slide me">
-       </div>
-       <div class="form-group">
-           <label>Book Image Url: </label>
-           <input type="url" ng-model="newBook.url" class="form-control" placeholder="url">
-       </div>
-       <button type="submit">Submit</button>
-       
-   </form>
-    <div ng-repeat="book in books">
-        {{book.title}}{{book.rating}}
-        <img ng-src="{{book.url}}" alt="{{book.title}}">
-    </div>
-    
-<script src="bower_components/angular/angular.js"></script> 
-<script src="app/init.js"></script>  
-<script src="app/controller/main-controller.js"></script> 
-    
+    <h1>Angular App with Disney Movies</h1> {{2+2}}
+    <form ng-submit="makeFilm()">
+        <div class="form-group">
+            <label>Film Title: </label>
+            <input type="text" ng-model="newFilm.title" class="form-control" placeholder="Title">
+        </div>
+
+        <button ng-click="mc.addItem($index)">Add Film</button>
+        <button ng-click="mc.removeItem($index)">Remove Film</button>
+    </form>
+
+        {{film.title}}
+     
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app/init.js"></script>
+    <script src="app/controller/main-controller.js"></script>
+
 </body>
+
 </html>

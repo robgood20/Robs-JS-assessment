@@ -1,1 +1,1 @@
-var app=angular.module('seuss', [])
+var app=angular.module('disFilms', [])
