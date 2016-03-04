@@ -7,19 +7,21 @@
 </head>
 
 <body ng-controller="MainController" class="container">
+
     <h1>Angular App with Disney Movies</h1> {{2+2}}
-    <form ng-submit="makeFilm()">
+    <ul>
+        <li ng-repeat='film in films track by $index'>Film Name{{film.title}} Film Year{{film.year}}</li>
+    </ul>
+    <form>
         <div class="form-group">
             <label>Film Title: </label>
             <input type="text" ng-model="newFilm.title" class="form-control" placeholder="Title">
+             <input type="text" ng-model="newFilm.year" class="form-control" placeholder="Year">
         </div>
 
-        <button ng-click="mc.addItem($index)">Add Film</button>
-        <button ng-click="mc.removeItem($index)">Remove Film</button>
+        <button ng-click="addFilm(newFilm)">Add Film</button>
+        <button ng-click="removeFilm($index)">Remove Film</button>
     </form>
-
-        {{film.title}}
-     
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="app/init.js"></script>

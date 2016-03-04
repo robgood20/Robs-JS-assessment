@@ -1,15 +1,12 @@
-app.controller('MainController', function($scope){
-    $scope.films=[]
-    $scope.films = function(){
-        $scope.films.push($scope.addfilm)
-        $scope.newFilm = {}
-    }    
-})
+app.controller('MainController', function ($scope) {
+    var mc = this
+    $scope.films = []
 
-  mc.addFilm = function($index){
-        mc.newFilm.push(film);
+$scope.addFilm = function () {
+    $scope.films.push($scope.newFilm);
+}
+
+$scope.removeFilm = function (i) {
+    $scope.films.splice(i,1)
     }
-    
-    mc.removeFilm = function($index){
-        mc.splice.push(film)
-    }
+})
